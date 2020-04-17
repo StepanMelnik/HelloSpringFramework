@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sme.spring</groupId>
+        <artifactId>hello-spring-framework</artifactId>
+        <version>0.0.0.Dev-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>hello-spring-framework-mvc</artifactId>
+    <name>${project.organization.name} :: ${application.name} :: Hello Spring MVC</name>
+    <description>A simple project to work with https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html</description>
+    <packaging>jar</packaging>
+
+    <properties>
+        <jackson.version>2.10.3</jackson.version>
+    </properties>
+
+    <dependencies>
+    </dependencies>
+
+</project>
