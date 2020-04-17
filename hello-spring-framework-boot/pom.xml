@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sme.spring</groupId>
+        <artifactId>hello-spring-framework</artifactId>
+        <version>0.0.0.Dev-SNAPSHOT</version>
+    </parent>
+    <!-- The parent is imported as pom type. @see dependencies -->
+    <!--parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath />
+    </parent-->
+
+    <artifactId>hello-spring-framework-boot</artifactId>
+    <name>${project.organization.name} :: ${application.name} :: Hello Spring Boot</name>
+    <description>A simple project to work with https://spring.io/projects/spring-boot project</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+        
+    </properties>
+
+    <dependencies>
+        <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-dependencies</artifactId>
+          <version>${spring-boot.version}</version>
+          <type>pom</type>
+          <scope>import</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
