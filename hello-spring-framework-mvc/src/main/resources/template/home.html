@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+
+  <body>
+
+    <h2 th:text="#{welcome}">Welcome</h2>
+    <table>
+	    <tr th:each="article: ${articles}">
+		    <td th:text="${article.id}" />
+		    <td th:text="${article.name}" />
+		    <td th:text="${article.description}" />
+		</tr>
+    </table>
+
+  </body>
+
+</html>
