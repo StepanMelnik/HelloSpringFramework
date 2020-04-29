@@ -1,6 +1,6 @@
 package com.sme.spring.boot;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ public class SimpleApplicationTests
     @Test
     public void testContextCreated() throws Exception
     {
-        assertTrue("Expects initialized start property", simpleApplicationEventData.getStart() > 0);
-        assertTrue("Expects initialized finish property", simpleApplicationEventData.getFinish() > 0);
-        assertTrue("", simpleApplicationEventData.getFinish() > simpleApplicationEventData.getStart());
+        assertTrue(simpleApplicationEventData.getStart() > 0, "Expects initialized start property");
+        assertTrue(simpleApplicationEventData.getFinish() > 0, "Expects initialized finish property");
+        assertTrue(simpleApplicationEventData.getFinish() > simpleApplicationEventData.getStart());
     }
 }

@@ -64,7 +64,7 @@
         <commons-io.version>2.6</commons-io.version>
         <jprocesses.version>1.6.5</jprocesses.version>
 
-        <junit.version>4.13</junit.version>
+        <junit-jupiter.version>5.6.2</junit-jupiter.version>
         <mockito.version>1.10.19</mockito.version>
         <powermock.version>1.7.4</powermock.version>
         <openpojo.version>0.8.3</openpojo.version>
@@ -106,10 +106,11 @@
         </dependency>
         
         <!-- Test -->
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
         
@@ -120,6 +121,15 @@
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.openpojo/openpojo -->
+        <dependency>
+            <groupId>com.openpojo</groupId>
+            <artifactId>openpojo</artifactId>
+            <version>${openpojo.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -135,11 +145,29 @@
                     <forceJavacCompilerUse>true</forceJavacCompilerUse>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.1.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-engine</artifactId>
+                        <version>${junit-jupiter.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
 
     <modules>
         <module>hello-spring-framework-mvc</module>
         <module>hello-spring-framework-mvcboot</module>
+        <module>hello-spring-framework-rest</module>
     </modules>
 </project>

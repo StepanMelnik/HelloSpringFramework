@@ -3,6 +3,7 @@
 /.idea/
 /.settings/
 /.checkstyle
+/create.sql
 /target/
 /bin/
 /build/
