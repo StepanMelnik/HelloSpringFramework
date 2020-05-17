@@ -4,6 +4,7 @@
 /.settings/
 /.checkstyle
 /create.sql
+/src/main/resources/datasource.properties
 /target/
 /bin/
 /build/

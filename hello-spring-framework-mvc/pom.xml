@@ -25,7 +25,6 @@
         <java.version>1.8</java.version>
 
         <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
-        <vaadin.version>14.1.25</vaadin.version>
     </properties>
 
     <dependencies>
@@ -88,6 +87,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
 
         <!-- Start jetty: comment out spring-boot-starter-tomcat dependency, exclude tomcat from spring-boot-starter-web  -->

@@ -23,6 +23,7 @@ public class PropertiesConfiguration
         configurer.setLocations(new ClassPathResource("application.properties"),
                 new ClassPathResource("datasource.properties"),
                 new ClassPathResource("jpa.properties"),
+                //new ClassPathResource("ssl.properties"),
                 new ClassPathResource("view.properties"));
 
         return configurer;

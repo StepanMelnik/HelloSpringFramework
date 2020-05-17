@@ -3,7 +3,9 @@ package com.sme.spring.mvc.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Description;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -21,6 +23,8 @@ import com.sme.spring.mvc.interceptor.SessionInterceptor;
 @EnableWebMvc
 public class MvcConfiguration implements WebMvcConfigurer
 {
+    private static final int ASYNC_TIMEOUT = 60000;
+
     // CSOFF
     /*
     @Bean
@@ -98,6 +102,25 @@ public class MvcConfiguration implements WebMvcConfigurer
         return templateResolver;
     }
     */
-
     // CSON
+
+    @Override
+    public void configureAsyncSupport(AsyncSupportConfigurer configurer)
+    {
+        configurer.setDefaultTimeout(ASYNC_TIMEOUT);
+        configurer.setTaskExecutor(mvcTaskExecutor());
+    }
+
+    /**
+     * Thread pool to work with async requests.
+     * 
+     * @return Returns {@link ThreadPoolTaskExecutor} bean.
+     */
+    @Bean
+    public ThreadPoolTaskExecutor mvcTaskExecutor()
+    {
+        ThreadPoolTaskExecutor taskExecutor = new ThreadPoolTaskExecutor();
+        taskExecutor.setThreadGroupName("mvc-executor");
+        return taskExecutor;
+    }
 }

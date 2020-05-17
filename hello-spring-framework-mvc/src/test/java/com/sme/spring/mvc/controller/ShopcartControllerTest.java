@@ -35,6 +35,5 @@ public class ShopcartControllerTest extends Assertions
                 .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
                 .andExpect(MockMvcResultMatchers.model().attributeExists("shopcart"))
                 .andExpect(MockMvcResultMatchers.view().name("redirect:/"));
-
     }
 }

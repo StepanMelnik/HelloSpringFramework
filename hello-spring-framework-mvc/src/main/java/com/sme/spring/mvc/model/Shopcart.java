@@ -1,5 +1,6 @@
 package com.sme.spring.mvc.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * Represents shop cart POJO.
  */
-public class Shopcart
+public class Shopcart implements Serializable
 {
     private final List<ShopcartItem> shopcartItems = new ArrayList<>();
 

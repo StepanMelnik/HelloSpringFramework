@@ -1,5 +1,7 @@
 package com.sme.spring.mvc.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,8 +22,15 @@ public class HomeController
         this.articleService = articleService;
     }
 
+    /**
+     * Processes Root request.
+     * 
+     * @param model The model of UI;
+     * @param request The servlet request;
+     * @return Returns Root view.
+     */
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String home(ModelMap model)
+    public String home(ModelMap model, HttpServletRequest request)
     {
         model.put("articles", articleService.findAll());
         return "home";

@@ -1,5 +1,7 @@
 package com.sme.spring.mvc.model;
 
+import java.io.Serializable;
+
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -9,7 +11,7 @@ import org.hibernate.validator.constraints.Range;
 /**
  * Shopcart item of shop cart.
  */
-public class ShopcartItem
+public class ShopcartItem implements Serializable
 {
     private static final int NINETY = 90;
 

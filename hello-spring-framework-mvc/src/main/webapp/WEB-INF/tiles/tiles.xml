@@ -25,4 +25,8 @@
         <put-attribute name="body" value="/WEB-INF/jsp/view/order/orders.jsp" />
     </definition>
 
+    <definition name="async/*" extends="baseLayout">
+        <put-attribute name="body" value="/WEB-INF/jsp/view/async/{1}.jsp" />
+    </definition>
+
 </tiles-definitions>
