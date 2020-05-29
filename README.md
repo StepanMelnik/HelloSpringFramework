@@ -14,3 +14,13 @@ The following modules work with Spring Framework:
 
 **hello-spring-framework-mvc** module works with Asynchronous processing supported by Servlet 3.0 version.
 Also the module works with **PushBuilder** supported by Servlet 4.0 version.
+
+## Build
+
+Clone and install <a href="https://github.com/StepanMelnik/Parent.git">Parent</a> project before building.
+
+### Maven
+> mvn clean install
+
+### Docker
+Check Header in the Dockerfile how to create and run an image of the project.
