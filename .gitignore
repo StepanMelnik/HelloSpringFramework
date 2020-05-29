@@ -3,7 +3,7 @@
 /.idea/
 /.settings/
 /.checkstyle
-/settigs.xml
 /target/
 /bin/
 /build/
+/settings.xml
