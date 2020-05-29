@@ -1,6 +1,6 @@
 # DataSourceProperties @ConfigurationProperties(prefix = "spring.datasource")
 spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
-spring.datasource.url=jdbc:sqlserver://localhost;databaseName=SpringTestCust
-spring.datasource.username=XX
-spring.datasource.password=XXXX
+spring.datasource.url=jdbc:sqlserver://repository.sme.com;databaseName=SpringTestCust
+spring.datasource.username=developer
+spring.datasource.password=secret
 spring.jpa.show-sql=true

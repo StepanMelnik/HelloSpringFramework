@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
+    <!--parent>
         <groupId>com.sme</groupId>
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-    </parent>
+    </parent-->
 
     <groupId>com.sme.spring</groupId>
     <artifactId>hello-spring-framework</artifactId>
@@ -162,12 +162,27 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>com.sme.spring.mvc.SimpleMvcApplication</mainClass>
+					<layout>ZIP</layout>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>                
+            </plugin>
         </plugins>
     </build>
 
     <modules>
+        <module>hello-spring-framework-boot</module>
         <module>hello-spring-framework-mvc</module>
         <module>hello-spring-framework-mvcboot</module>
-        <module>hello-spring-framework-rest</module>
     </modules>
 </project>
