@@ -26,9 +26,13 @@ Add hello-spring-framework-mvc\src\main\resources\datasource.properties:
 > sh "rm -f datasource.properties> /dev/null"
 
 > sh "echo spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver >> datasource.properties"
+
 > sh "echo spring.datasource.url=jdbc:sqlserver://repository.sme.com\\;databaseName=SpringTestCust >> datasource.properties"
+
 > sh "echo spring.datasource.username=developer >> datasource.properties"
+
 > sh "echo spring.datasource.password=secret >> datasource.properties"
+
 > sh "echo spring.jpa.show-sql=true >> datasource.properties"
 
 > sh "cp datasource.properties hello-spring-framework-mvc/src/main/resources/datasource.properties"
