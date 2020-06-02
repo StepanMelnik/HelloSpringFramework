@@ -2,7 +2,7 @@
 
 
 ## Description
-After long years say "Hi Spring Framework" again.
+A simple Maven project to work with different Spring modules.
 
 
 ### Modules
@@ -20,6 +20,21 @@ Also the module works with **PushBuilder** supported by Servlet 4.0 version.
 Clone and install <a href="https://github.com/StepanMelnik/Parent.git">Parent</a> project before building.
 
 ### Maven
+
+Add hello-spring-framework-mvc\src\main\resources\datasource.properties:
+
+> sh "rm -f datasource.properties> /dev/null"
+
+> sh "echo spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver >> datasource.properties"
+> sh "echo spring.datasource.url=jdbc:sqlserver://repository.sme.com\\;databaseName=SpringTestCust >> datasource.properties"
+> sh "echo spring.datasource.username=developer >> datasource.properties"
+> sh "echo spring.datasource.password=secret >> datasource.properties"
+> sh "echo spring.jpa.show-sql=true >> datasource.properties"
+
+> sh "cp datasource.properties hello-spring-framework-mvc/src/main/resources/datasource.properties"
+
+Build by maven
+
 > mvn clean install
 
 ### Docker
