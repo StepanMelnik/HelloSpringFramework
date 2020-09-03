@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: simple-mvcboot
+  name: simple-mvcboot
+  namespace: default
+spec:
+  selector:
+    app: simple-mvcboot
+  ports:
+    - name: http
+      port: 8040
+      targetPort: http
+      protocol: TCP
+  type: LoadBalancer

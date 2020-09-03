@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-mvcboot
+spec:
+  containers:
+  - image: sme/simple-mvc-boot:0.1
+    name: simple-mvcboot
+    ports:
+    - containerPort: 8040
+      protocol: TCP
