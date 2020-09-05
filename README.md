@@ -58,4 +58,20 @@ All scripts are in "hello-spring-framework-mvcboot\src\main\docker" folder:
 - **MiniCubeReadme.txt** descibes all steps to deploy a pod, service and replication controller in MiniKube and check/describe the entities.
 
 
+#### Production
 
+Do not create Pod (sudo kubectl create -f simple-mvcboot-pod.yaml) in production.
+
+Use the following command instead as follow:
+
+1. **create a Deployment** (pod + replication controller):
+    - kubectl apply -f simple-mvcboot-deployment.yaml
+    - kubectl get pods
+    - kubectl describe pod simple-mvcboot
+2. **create a service**:
+    - kubectl apply -f simple-mvcboot-service.yaml
+    - kubectl get services
+3. **open service in browser**: 10.98.48.233:8040
+4. **cleanup**
+    - kubectl delete -f simple-mvcboot-service.yaml
+    - kubectl delete -f simple-mvcboot-deployment.yaml

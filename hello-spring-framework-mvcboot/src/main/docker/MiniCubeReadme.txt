@@ -71,3 +71,27 @@ sudo docker exec -it k8s_simple-mvcboot_simple-mvcboot-n5xf8_default_5d630cbc-a3
 kubectl delete -f simple-mvcboot-replicationcontroller.yaml
 kubectl delete -f simple-mvcboot-service.yaml
 kubectl delete -f simple-mvcboot-pod.yaml 
+
+
+###################################### Production #####################################
+Do not create Pod (sudo kubectl create -f simple-mvcboot-pod.yaml) in production.
+
+Use the following command instead as follow:
+# 1) create Deployment (pod + replication controller) 
+sudo kubectl apply -f simple-mvcboot-deployment.yaml
+
+-- get info
+sudo kubectl get pods
+sudo kubectl describe pod simple-mvcboot
+
+# 2) create a service:
+sudo kubectl apply -f simple-mvcboot-service.yaml
+sudo kubectl get services
+ 
+3) open service in browser: 10.98.48.233:8040
+
+# Cleanup
+kubectl delete -f simple-mvcboot-service.yaml
+kubectl delete -f simple-mvcboot-deployment.yaml
+ 
+ 
