@@ -16,7 +16,7 @@ sudo minikube dashboard  <-- enable dashboard if needed
 cd HelloSpringFramework/hello-spring-framework-mvcboot/src/main/docker 
 ls -l | grep simple
  
-# Start article name pod:
+# Start simple-mvcboot pod:
 sudo kubectl create -f simple-mvcboot-pod.yaml
 
 -- get and describe pod

@@ -1,0 +1,26 @@
+# Use simple-mvcboot-pod.yaml in dev environment only.
+apiVersion: v1
+kind: Deployment
+metadata:
+  labels:
+    app: simple-mvcboot
+  name: simple-mvcboot
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: simple-mvcboot
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: simple-mvcboot
+    spec:
+      containers:
+        -
+          image: sme/simple-mvc-boot:0.1
+          name: simple-mvcboot
+          ports:
+            -
+              containerPort: 8040
+              name: http
