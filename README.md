@@ -45,15 +45,16 @@ Build by maven
 Check Header in the Dockerfile how to create and run an image of the project.
 
 ### Kubernetes
-**hello-spring-framework-mvcboot** project creates allows to create a docker image and allows to deploy the image in MiniKube.
+**hello-spring-framework-mvcboot** project creates a docker image and allows to deploy the image in MiniKube.
 
 All scripts are in "hello-spring-framework-mvcboot\src\main\docker" folder:
 
 - **Dockerfile** - docker file to create an image
 - **run.sh** - runs simple-mvcboot application
-- **simple-mvcboot-pod.yaml** - creates a pod in MiniKube
-- **simple-mvcboot-service.yaml** - creates a service in MiniKube
-- **simple-mvcboot-replicationcontroller.yaml** - creates a replication controller in MiniKube.
+- **simple-mvcboot-pod.yaml** - creates a pod in a cluster (use only in Dev environment)
+- **simple-mvcboot-service.yaml** - creates a service in k8s
+- **simple-mvcboot-replicationcontroller.yaml** - creates a replication controller (use only in Dev environment)
+- **simple-mvcboot-deployment.yaml** - creates a pod and replication controller (recommended in Dev/Prod)
 - **DockerReadme.txt** describes all steps to build, create, check sme/simple-mvc-boot:0.1 docker image
 - **MiniCubeReadme.txt** descibes all steps to deploy a pod, service and replication controller in MiniKube and check/describe the entities.
 
