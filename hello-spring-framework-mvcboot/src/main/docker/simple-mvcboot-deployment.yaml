@@ -17,10 +17,26 @@ spec:
         app: simple-mvcboot
     spec:
       containers:
-        -
-          image: sme/simple-mvc-boot:0.1
+        - image: sme/simple-mvc-boot:0.1
           name: simple-mvcboot
           ports:
             -
-              containerPort: 8040
+              containerPort: 8085
               name: http
+          readinessProbe:
+            httpGet:
+              path: /actuator/health/readiness
+              port: 8086
+            initialDelaySeconds: 45
+            periodSeconds: 15
+          livenessProbe:
+            httpGet:
+              path: /actuator/health/liveness
+              port: 8086
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          resources:
+            requests:
+              memory: 1Mi
+            limits:
+              memory: 1Mi            

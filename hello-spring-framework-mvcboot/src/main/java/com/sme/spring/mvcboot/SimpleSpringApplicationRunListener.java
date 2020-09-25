@@ -40,6 +40,10 @@ public class SimpleSpringApplicationRunListener implements SpringApplicationRunL
         SimpleApplicationEventData simpleApplicationEventData = context.getBean(SimpleApplicationEventData.class);
         simpleApplicationEventData.setStart(start);
         simpleApplicationEventData.setFinish(System.currentTimeMillis());
+
+        // validate if local cache has started in kubernetes liveness/readiness probes
+        LocalCacheVerifier localCacheVerifier = context.getBean(LocalCacheVerifier.class);
+        localCacheVerifier.checkLocalCache();
     }
 
     @Override
